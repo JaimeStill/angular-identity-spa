@@ -1,0 +1,13 @@
+mat-toolbar.mat-toolbar mat-form-field.mat-mdc-form-field {
+    font-size: 12px;
+}
+
+button.mat-mdc-icon-button.small {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+
+    mat-icon.mat-icon {
+        transform: scale(0.8);
+    }
+}

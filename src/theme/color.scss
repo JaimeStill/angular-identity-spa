@@ -1,0 +1,86 @@
+@use 'sass:map';
+@use 'sass:math';
+@use '@angular/material' as mat;
+@use './palette.scss';
+
+@import './glow.scss';
+@import './snacker.scss';
+
+@mixin style-theme($theme, $palette) {
+    $config: mat.get-color-config($theme);
+
+    $b: map.get($config, background);
+    $f: map.get($config, foreground);
+
+    $background: mat.get-color-from-palette($b, background);
+    $card: mat.get-color-from-palette($b, card);
+    $app-bar: mat.get-color-from-palette($b, app-bar);
+    $status-bar: mat.get-color-from-palette($b, status-bar);
+    $hover: mat.get-color-from-palette($b, hover);
+    $tooltip: mat.get-color-from-palette($b, tooltip);
+    $dialog: mat.get-color-from-palette($b, dialog);
+
+    $base: mat.get-color-from-palette($f, base);
+    $text: mat.get-color-from-palette($f, text);
+    $icon: mat.get-color-from-palette($f, icon);
+    $hint: mat.get-color-from-palette($f, hint);
+    $divider: mat.get-color-from-palette($f, divider);
+    $disabled-button: mat.get-color-from-palette($f, disabled-button);
+    $disabled-text: mat.get-color-from-palette($f, disabled-text);
+
+    .background-card {
+        background-color: $card !important;
+    }
+
+    .background-app-bar {
+        background-color: $app-bar !important;
+    }
+
+    .background-default {
+        background-color: $background !important;
+    }
+
+    .background-inverted {
+        background-color: $text !important;
+        color: $background !important;
+    }
+
+    .border-text {
+        border: 1px solid $text !important;
+    }
+
+    .border-divider {
+        border: 1px solid $divider !important;
+    }
+
+    .color-text {
+        color: $text !important;
+    }
+
+    .color-disabled {
+        color: $disabled-text !important;
+    }
+
+    @each $key, $value in $palette {
+        .background-#{$key} {
+            background-color: map.get($value, "color") !important;
+            color: map.get($value, "contrast") !important;
+        }
+
+        .border-#{$key} {
+            border: 1px solid;
+            border-color: map.get($value, "color") !important;
+        }
+
+        .color-#{$key} {
+            color: map.get($value, "color") !important;
+        }
+
+        mat-divider.mat-divider.#{$key} {
+            border-color: map.get($value, "color");
+        }
+    }
+
+    @include style-glow($palette);
+    @include style-snacker($card, $text, $palette);
+}

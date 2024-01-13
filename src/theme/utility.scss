@@ -1,0 +1,155 @@
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.no-display {
+    display: none;
+}
+
+.pre-wrap {
+    white-space: pre-wrap;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.overflow-x {
+    overflow-x: auto;
+}
+
+.overflow-y {
+    overflow-y: auto;
+}
+
+.no-resize {
+    resize: none !important;
+}
+
+.resize {
+    resize: both !important;
+}
+
+.resize-horizontal {
+    resize: horizontal !important;
+}
+
+.resize-vertical {
+    resize: vertical !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.cursor-default {
+    cursor: default !important;
+}
+
+.rounded {
+    border-radius: 4px;
+}
+
+.rounded-right {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.rounded-left {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.rounded-top {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.rounded-bottom {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.no-outline {
+    outline: 0;
+}
+
+@for $index from 0 through 8 {
+    $i: $index * 2;
+
+    .p#{$i} {
+        padding: #{$i}px !important;
+    }
+
+    .px#{$i} {
+        padding-left: #{$i}px !important;
+        padding-right: #{$i}px !important;
+    }
+
+    .py#{$i} {
+        padding-top: #{$i}px !important;
+        padding-bottom: #{$i}px !important;
+    }
+
+    .pt#{$i} {
+        padding-top: #{$i}px !important;
+    }
+
+    .pr#{$i} {
+        padding-right: #{$i}px !important;
+    }
+
+    .pb#{$i} {
+        padding-bottom: #{$i}px !important;
+    }
+
+    .pl#{$i} {
+        padding-left: #{$i}px !important;
+    }
+
+    .m#{$i} {
+        margin: #{$i}px !important;
+    }
+
+    .mx#{$i} {
+        margin-left: #{$i}px !important;
+        margin-right: #{$i}px !important;
+    }
+
+    .my#{$i} {
+        margin-top: #{$i}px !important;
+        margin-bottom: #{$i}px !important;
+    }
+
+    .mt#{$i} {
+        margin-top: #{$i}px !important;
+    }
+
+    .mr#{$i} {
+        margin-right: #{$i}px !important;
+    }
+
+    .mb#{$i} {
+        margin-bottom: #{$i}px !important;
+    }
+
+    .ml#{$i} {
+        margin-left: #{$i}px !important;
+    }
+
+    .gap-#{$i} {
+        gap: #{$i}px;
+    }
+
+    .row-gap-#{$i} {
+        row-gap: #{$i}px;
+    }
+
+    .column-gap-#{$i} {
+        column-gap: #{$i}px;
+    }
+}

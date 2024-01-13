@@ -1,0 +1,46 @@
+<p class="m8 mat-h1">Profile</p>
+<p class="m8">
+    Refreshing this page will continue to use the cached access
+    token until it nears expiration, at which point a new
+    access token will be requested.
+</p>
+@if (profile) {
+    <div flexContainer
+        flexDirection="column"
+        flexMain="start"
+        flexCross="stretch"
+        flexGap="8px"
+        class="m8 p8 rounded background-card border-divider profile">
+        <profile-property label="Profile Id"
+                        [value]="profile.id"></profile-property>
+        @for (phone of profile.businessPhones; track phone) {
+            <profile-property label="Business Phones"
+                              [value]="phone"></profile-property>
+        } @empty {
+            <profile-property label="Business Phones"
+                              value="N/A"></profile-property>
+        }
+        <profile-property label="Display Name"
+                        [value]="profile.displayName"></profile-property>
+        <profile-property label="Given Name"
+                        [value]="profile.givenName"></profile-property>
+        <profile-property label="Job Title"
+                        [value]="profile.jobTitle"></profile-property>
+        <profile-property label="Mail"
+                        [value]="profile.mail"></profile-property>
+        <profile-property label="Mobile Phone"
+                        [value]="profile.mobilePhone"></profile-property>
+        <profile-property label="Office Location"
+                        [value]="profile.officeLocation"></profile-property>
+        <profile-property label="Preferred Language"
+                        [value]="profile.preferredLanguage"></profile-property>
+        <profile-property label="Surname"
+                        [value]="profile.surname"></profile-property>
+        <profile-property label="User Principal Name"
+                        [value]="profile.userPrincipalName"></profile-property>
+        <profile-property label="Token Expiration"
+                        [value]="tokenExpiration"></profile-property>
+    </div>
+} @else {
+    <p class="m8 color-accent">Loading...</p>
+}

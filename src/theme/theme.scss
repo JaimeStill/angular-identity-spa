@@ -1,0 +1,41 @@
+@use '@angular/material' as mat;
+@use './palette.scss';
+
+@import './layout.scss';
+@import './color.scss';
+@import './material.scss';
+@import './utility.scss';
+
+@include mat.core();
+
+$light-palette: palette.get-palette();
+$light-theme: mat.define-light-theme(palette.get-theme($light-palette));
+
+// color.scss - style-theme
+@include style-theme($light-theme, $light-palette);
+
+// style material components
+@include mat.all-component-themes($light-theme);
+
+/*
+    Needed until GitHub issue is resolved:
+    https://github.com/angular/components/issues/26184
+*/
+@include mat.typography-hierarchy($light-theme);
+
+.app-dark {
+    $dark-palette: palette.get-palette(false);
+    $dark-theme: mat.define-dark-theme(palette.get-theme($dark-palette));
+
+    // color.scss - style-theme
+    @include style-theme($dark-theme, $dark-palette);
+
+    // update material component theme colors
+    @include mat.all-component-colors($dark-theme);
+
+    /*
+        Needed until GitHub issue is resolved:
+        https://github.com/angular/components/issues/26184
+    */
+    @include mat.typography-hierarchy($dark-theme);
+}

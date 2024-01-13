@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin style-snacker($background, $text, $palette) {
+    .mat-mdc-snack-bar-container.snacker {
+        .mdc-snackbar__surface {
+            background-color: $background;
+        }
+
+        .mdc-snackbar__label,
+        .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+            color: $text;
+        }
+    }
+
+    @each $key, $value in $palette {
+        .mat-mdc-snack-bar-container.snacker.snacker-#{$key} {
+            .mdc-snackbar__label {
+                color: map.get($value, 'color');
+            }
+
+            .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+                color: $text;
+            }
+        }
+    }
+}

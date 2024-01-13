@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin style-glow($palette) {
+
+    @each $key, $value in $palette {
+        @for $index from 1 through 8 {
+            $i: $index * 2;
+
+            .glow-#{$i}-#{$key} {
+                @include mat.elevation($i, map.get($value, "color"));
+            }
+        }
+
+        .glow-#{$key} {
+            @include mat.elevation-transition;
+            @include mat.elevation(4, map.get($value, "color"));
+
+            &:hover {
+                @include mat.elevation(8, map.get($value, "color"));
+            }
+        }
+    }
+}

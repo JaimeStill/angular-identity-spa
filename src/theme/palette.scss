@@ -1,0 +1,154 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@function get-palette($light: true) {
+    $palette: (
+        "red": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$red-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$red-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$red-palette, if($light, 500, A200))
+        ),
+        "pink": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$pink-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$pink-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$pink-palette, if($light, 500, A200))
+        ),
+        "purple": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$purple-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$purple-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$purple-palette, if($light, 500, A200))
+        ),
+        "deep-purple": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$deep-purple-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$deep-purple-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$deep-purple-palette, if($light, 500, A200))
+        ),
+        "indigo": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$indigo-palette, if($light, A700, A200)),
+            "color": mat.get-color-from-palette(mat.$indigo-palette, if($light, A700, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$indigo-palette, if($light, A700, A200))
+        ),
+        "blue": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$blue-palette, if($light, 500, 300)),
+            "color": mat.get-color-from-palette(mat.$blue-palette, if($light, 500, 300)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$blue-palette, if($light, 500, 300))
+        ),
+        "light-blue": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$light-blue-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$light-blue-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$light-blue-palette, if($light, 500, A200))
+        ),
+        "cyan": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$cyan-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$cyan-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$cyan-palette, if($light, 500, A200))
+        ),
+        "teal": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$teal-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$teal-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$teal-palette, if($light, 500, A200))
+        ),
+        "green": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$green-palette, A700),
+            "color": mat.get-color-from-palette(mat.$green-palette, A700),
+            "contrast": mat.get-contrast-color-from-palette(mat.$green-palette, A700)
+        ),
+        "light-green": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$light-green-palette, if($light, A700, A400)),
+            "color": mat.get-color-from-palette(mat.$light-green-palette, if($light, A700, A400)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$light-green-palette, if($light, A700, A400))
+        ),
+        "lime": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$lime-palette, if($light, 700, A200)),
+            "color": mat.get-color-from-palette(mat.$lime-palette, if($light, 700, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$lime-palette, if($light, 700, A200))
+        ),
+        "yellow": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$yellow-palette, if($light, 500, A400)),
+            "color": mat.get-color-from-palette(mat.$yellow-palette, if($light, 500, A400)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$yellow-palette, if($light, 500, A400))
+        ),
+        "amber": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$amber-palette, if($light, 500, A400)),
+            "color": mat.get-color-from-palette(mat.$amber-palette, if($light, 500, A400)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$amber-palette, if($light, 500, A400))
+        ),
+        "orange": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$orange-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$orange-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$orange-palette, if($light, 500, A200))
+        ),
+        "deep-orange": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$deep-orange-palette, if($light, 500, A200)),
+            "color": mat.get-color-from-palette(mat.$deep-orange-palette, if($light, 500, A200)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$deep-orange-palette, if($light, 500, A200))
+        ),
+        "brown": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$brown-palette, if($light, 500, 300)),
+            "color": mat.get-color-from-palette(mat.$brown-palette, if($light, 500, 300)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$brown-palette, if($light, 500, 300))
+        ),
+        "gray": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$gray-palette, if($light, 700, 300)),
+            "color": mat.get-color-from-palette(mat.$gray-palette, if($light, 700, 300)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$gray-palette, if($light, 700, 300))
+        ),
+        "blue-gray": (
+            "theme": if($light, 'light', 'dark'),
+            "palette": mat.define-palette(mat.$blue-gray-palette, if($light, 700, 300)),
+            "color": mat.get-color-from-palette(mat.$blue-gray-palette, if($light, 700, 300)),
+            "contrast": mat.get-contrast-color-from-palette(mat.$blue-gray-palette, if($light, 700, 300))
+        )
+    );
+
+    $palette: map.set($palette, "primary", map.get($palette, "green"));
+    $palette: map.set($palette, "accent", map.get($palette, "blue"));
+    $palette: map.set($palette, "warn", map.get($palette, "red"));
+
+    @return $palette;
+}
+
+@function get-theme($palette) {
+    @return (
+        color: (
+            "primary": get-theme-palette($palette, "primary"),
+            "accent": get-theme-palette($palette, "accent"),
+            "warn": get-theme-palette($palette, "warn")
+        ),
+        /*
+            Needed until GitHub issue is resolved:
+            https://github.com/angular/components/issues/26184
+        */
+        typography: mat.define-typography-config()
+    );
+}
+
+@function get-theme-palette($palette, $color) {
+    @return map.get(map.get($palette, $color), "palette");
+}
+
+@function get-theme-color($palette, $color) {
+    @return map.get(map.get($palette, $color), "color");
+}
+
+@function get-theme-contrast($palette, $color) {
+    @return map.get(map.get($palette, $color), "contrast");
+}

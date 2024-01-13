@@ -1,0 +1,33 @@
+<div class="grid full-height mat-app-background"
+     [ngClass]="themer.isLight ? 'app-light' : 'app-dark'">
+    <mat-toolbar>
+        <span class="cursor-pointer"
+              routerLink="/">Angular Identity SPA</span>
+        <span flexChild></span>
+        @if (account(); as acct) {
+            <span class="mr8">Welcome, {{acct.name}}</span>
+            <button mat-icon-button
+                    (click)="logout()">
+                <mat-icon>logout</mat-icon>
+            </button>
+            <button mat-icon-button
+                    (click)="viewProfile()">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        } @else {
+            <button mat-icon-button
+                    (click)="login()">
+                <mat-icon>login</mat-icon>
+            </button>
+        }
+        <button mat-icon-button
+                [ngClass]="themer.isLight ? 'color-amber' : 'color-text'"
+                (click)="themer.toggleTheme()">
+            <mat-icon *ngIf="themer.isLight">brightness_5</mat-icon>
+            <mat-icon *ngIf="!(themer.isLight)">brightness_3</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="overflow">
+        <router-outlet></router-outlet>
+    </div>
+</div>
