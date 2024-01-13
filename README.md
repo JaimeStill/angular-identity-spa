@@ -2,6 +2,8 @@
 
 This project implements the [MSAL.js Angular Quickstart](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-single-page-app-angular-sign-in) with Angular 17 with standalone components. I understand that the [MSAL Angular v3](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/package.json) library dependencies are targeting Angular 15, and [Angular 17 is not officially supported](https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/6719#issuecomment-1886044786), but I'm stubborn and have it working with some caveats. The [Angular Standalone Sample](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-angular-v3-samples/angular-standalone-sample) was incredibly helpful with regard to helping me get this working properly.
 
+https://github.com/JaimeStill/angular-identity-spa/assets/14102723/02ef9460-8058-499a-a042-f0f7e4d295ac
+
 ## Setup
 
 * [identity](./src/app/identity) contains all of the custom MSAL configuration, with Entra app configuration specified in [environment](./src/environments/environment.ts).
