@@ -65,6 +65,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _destroying$ = new Subject<void>();
 
     account: WritableSignal<AccountInfo | null> = signal(null);
+    isIframe = false;
 
     constructor(
         @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
@@ -77,6 +78,8 @@ export class AppComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit(): void {
+        this.isIframe = window !== window.parent && !window.opener;
+
         this.msalBroadcastService
             .inProgress$
             .pipe(

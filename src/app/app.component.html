@@ -28,6 +28,6 @@
         </button>
     </mat-toolbar>
     <div class="overflow">
-        <router-outlet></router-outlet>
+        <router-outlet *ngIf="!isIframe"></router-outlet>
     </div>
 </div>
